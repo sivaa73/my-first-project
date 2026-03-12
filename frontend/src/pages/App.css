@@ -1,0 +1,240 @@
+@import url('https://fonts.googleapis.com/css2?family=Rajdhani:wght@600;700&family=Inter:wght@400;500&display=swap');
+
+:root {
+  --dark-onyx: #050B0A;
+  --neon-green: #00FF9F;
+  --sky-blue: #00B3FF;
+  --matrix-glow: rgba(0, 255, 159, 0.3);
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: var(--dark-onyx);
+  color: #ffffff;
+  font-family: 'Inter', sans-serif;
+  overflow: hidden;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* --- High-Tech Scanline Overlay --- */
+body::before {
+  content: " ";
+  position: absolute;
+  top: 0; left: 0; width: 100%; height: 100%;
+  background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 255, 159, 0.05) 50%),
+              linear-gradient(90deg, rgba(255, 0, 0, 0.02), rgba(0, 255, 0, 0.01), rgba(0, 0, 255, 0.02));
+  background-size: 100% 4px, 3px 100%;
+  z-index: 10;
+  pointer-events: none;
+  animation: scanline 8s linear infinite;
+}
+
+@keyframes scanline {
+  0% { transform: translateY(0); }
+  100% { transform: translateY(100%); }
+}
+
+/* --- Glass-Tech Login Card --- */
+.login-card {
+  background: rgba(5, 11, 10, 0.7);
+  backdrop-filter: blur(12px);
+  padding: 3rem;
+  border-radius: 20px;
+  width: 400px;
+  border: 1px solid transparent;
+  border-image: linear-gradient(to bottom right, var(--neon-green), var(--sky-blue)) 1;
+  box-shadow: 0 0 30px var(--matrix-glow);
+  z-index: 20;
+  animation: float 4s ease-in-out infinite;
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+h1 {
+  font-family: 'Rajdhani', sans-serif;
+  text-transform: uppercase;
+  color: var(--neon-green);
+  text-shadow: 0 0 10px var(--neon-green);
+  text-align: center;
+  letter-spacing: 2px;
+}
+
+/* --- Interactive Cyber Button --- */
+.cyber-btn {
+  width: 100%;
+  padding: 15px;
+  margin-top: 20px;
+  background: linear-gradient(90deg, var(--neon-green), var(--sky-blue));
+  border: none;
+  border-radius: 5px;
+  color: var(--dark-onyx);
+  font-family: 'Rajdhani', sans-serif;
+  font-weight: 700;
+  font-size: 18px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-shadow: 0 0 5px rgba(255,255,255,0.5);
+  animation: pulse 2s infinite;
+}
+
+.cyber-btn:hover {
+  transform: scale(1.03);
+  box-shadow: 0 0 25px var(--neon-green);
+}
+
+@keyframes pulse {
+  0% { box-shadow: 0 0 5px var(--neon-green); }
+  50% { box-shadow: 0 0 15px var(--neon-green); }
+  100% { box-shadow: 0 0 5px var(--neon-green); }
+}
+
+.input-field {
+  width: 100%;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(0, 255, 159, 0.3);
+  padding: 12px;
+  margin: 10px 0;
+  color: white;
+  border-radius: 4px;
+  outline: none;
+}
+
+.input-field:focus {
+  border-color: var(--sky-blue);
+  box-shadow: 0 0 10px var(--sky-blue);
+}
+/* Sidebar Glassmorphism */
+.cyber-sidebar {
+  width: 280px;
+  background: rgba(5, 11, 10, 0.9);
+  backdrop-filter: blur(20px);
+  border-right: 1px solid var(--neon-green);
+  padding: 40px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  box-shadow: 10px 0 30px rgba(0, 255, 159, 0.1);
+}
+
+/* Cyber Table Styling */
+.cyber-table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0 10px;
+}
+
+.cyber-table th {
+  color: var(--neon-green);
+  text-transform: uppercase;
+  font-family: 'Rajdhani';
+  letter-spacing: 2px;
+  padding: 15px;
+  border-bottom: 2px solid var(--neon-green);
+}
+
+.cyber-table tr {
+  background: rgba(0, 255, 159, 0.03);
+  transition: 0.3s;
+}
+
+.cyber-table tr:hover {
+  background: rgba(0, 255, 159, 0.08);
+  transform: scale(1.01);
+}
+
+.cyber-table td {
+  padding: 20px;
+  border-top: 1px solid rgba(0, 255, 159, 0.1);
+  border-bottom: 1px solid rgba(0, 255, 159, 0.1);
+}
+
+/* Status Badges */
+.status-pill {
+  padding: 5px 15px;
+  border-radius: 4px;
+  font-weight: bold;
+  font-size: 12px;
+  text-transform: uppercase;
+  border: 1px solid currentColor;
+}
+@keyframes slideIn {
+  from { transform: translateX(100%); opacity: 0; }
+  to { transform: translateX(0); opacity: 1; }
+}
+
+.message-pop.success {
+  border-left: 5px solid #00FF9F !important;
+}
+
+.message-pop.error {
+  border-left: 5px solid #ff4d4d !important;
+  animation: shake 0.4s ease-in-out;
+}
+
+@keyframes shake {
+  0%, 100% { transform: translateX(0); }
+  25% { transform: translateX(-10px); }
+  75% { transform: translateX(10px); }
+}
+
+/* Container for the binary canvas */
+.binary-canvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 5;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.5s ease;
+}
+
+.binary-active {
+  opacity: 1;
+}
+
+/* Slide down animation for the success message */
+@keyframes slideInDown {
+  from { transform: translateY(-100%); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+.action-btn {
+  border: none;
+  padding: 8px 15px;
+  border-radius: 6px;
+  font-family: 'Rajdhani';
+  font-weight: 800;
+  font-size: 11px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.action-btn.approve { background: rgba(0, 255, 159, 0.1); color: #00FF9F; border: 1px solid #00FF9F; }
+.action-btn.reject { background: rgba(239, 68, 68, 0.1); color: #ef4444; border: 1px solid #ef4444; }
+.action-btn.view { background: rgba(0, 179, 255, 0.1); color: #00B3FF; border: 1px solid #00B3FF; }
+
+/* Enhanced Animations for Touch/Hover */
+.action-btn:hover {
+  transform: translateY(-3px) scale(1.05);
+  box-shadow: 0 5px 15px currentColor;
+}
+
+.action-btn:active {
+  transform: scale(0.95);
+}
+
+.table-row-hover:hover {
+  background: rgba(255, 255, 255, 0.05);
+}

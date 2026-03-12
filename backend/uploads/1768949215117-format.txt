@@ -1,0 +1,28 @@
+mkdir project 
+mkdir web
+cd web
+python -m venv env
+ to set path:  cd web
+env\Scripts\activate
+if error
+Set-ExecutionPolicy -Scope CurrentUser -ExecutionPolicy RemoteSigned
+
+pip install requests
+pip install beautifulSoup4
+import requests
+from bs4 import BeautifulSoup
+import csv
+url='https://books.toscrape.com/'
+response=requests.get(url)
+print(response.text)
+python filename.py
+soup=BeautifulSoup(response.text,'lxml')
+
+
+mkdir project
+mkdir selenium
+activate
+pip install selenium
+pip install webdriver-manager
+
+
