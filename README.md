@@ -42,6 +42,7 @@ Create a PostgreSQL database and run the SQL scripts to create tables for `users
 cd backend
 npm install
 node server.js
+```
 
 SCREENSHOTS
 <img width="1366" height="594" alt="docapp6" src="https://github.com/user-attachments/assets/4c496daf-b40e-432f-891e-2cc5c1ac45e0" />
