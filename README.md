@@ -38,8 +38,7 @@ This project was built to solve the problem of unauthorized document processing.
 Create a PostgreSQL database and run the SQL scripts to create tables for `users` and `documents`.
 
 ### 2. Server Setup
-```bash<img width="1366" height="674" alt="docapp1" src="https://github.com/user-attachments/assets/fd75c528-5eb3-483c-9785-a835dedbb9ed" />
-
+```bash
 cd backend
 npm install
 node server.js
