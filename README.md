@@ -41,6 +41,7 @@ Create a PostgreSQL database and run the SQL scripts to create tables for `users
 ```bash
 cd backend
 npm install
+
 node server.js
 ```
 
@@ -51,3 +52,4 @@ SCREENSHOTS
 <img width="649" height="549" alt="docapp3" src="https://github.com/user-attachments/assets/1c470b9b-e5a5-4c4c-8b26-636add60f58f" />
 <img width="1366" height="704" alt="docapp2" src="https://github.com/user-attachments/assets/f9363da8-d6e4-499b-8d4f-c843304760e5" />
 <img width="1366" height="674" alt="docapp1" src="https://github.com/user-attachments/assets/6cb51574-8be4-460c-a705-705d17b18c9c" />
+
